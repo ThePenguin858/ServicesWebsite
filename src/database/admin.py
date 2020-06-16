@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Fatura
+from .models import Invoice, Client
 # Register your models here.
 
-admin.site.register(Fatura)
+admin.site.register(Invoice)
+admin.site.register(Client)

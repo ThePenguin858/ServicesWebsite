@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>This is my title</title>
-    </head>
+<head>
+    <title>This is my title</title>
+</head>
 
-    <body>
+<body>
 
-        {% include './navbar.html' %}
-        {% include './header.html' %}
+    {% include './navbar.html' %}
+    {% include './header.html' %}
 
-        {% block content %}
-        <main>
-            This is the default content of the website
-        </main>
-        {% endblock %}
+    {% block content %}
+    <main>
+        This is the default content of the website
+    </main>
+    {% endblock %}
 
-        {% include './footer.html' %}
-    </body>
+    {% include './footer.html' %}
+</body>
 
 </html>

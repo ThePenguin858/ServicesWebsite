@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view, about_view, contacts_view
-from database.views import create_fatura_view
+from database.views import create_invoice_view, create_client_view
 
 urlpatterns = [
     path('home', home_view),
@@ -25,5 +25,6 @@ urlpatterns = [
     path('about', about_view),
     path('contacts', contacts_view),
     path('admin/', admin.site.urls),
-    path('create/', create_fatura_view),
+    path('create_invoice/', create_invoice_view),
+    path('create_client/', create_client_view),
 ]
