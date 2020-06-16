@@ -1,0 +1,32 @@
+implement the database with relations, models, and keys
+
+The database need to be able to store, receipts, users, products, clients
+
+---DATABASE---
+    Tipos de Faturas:
+        -Fatura-recibo, fatura simplificada, fatura proforma.
+        Fatura-Recibo: Agrega a fatura e recibo e pode apenas ser emitida quando
+            a data da fatura e do pagamento coincidem.
+        Fatura-Simplificada: Documento emitido apenas para operacoes nacionais
+        
+        Fatura Proforma: Documento informativo frequentemente utilizado na cotação 
+            de produtos e na justificação da transacao internacional de produtos.  
+            Após aprovação do cliente pode ser convertida em fatura.
+
+Dicionario de Dados:
+    Fatura:
+        -Data de emissao
+        -Numero de Fatura
+        -Nome ou denominacao social do fornecedor de bens
+        -nif do Fornecedor
+        -Nome ou denominacao social do destinatario de tais bens ou servicos
+        -nif do destinatario de bens ou servicos
+        -Denominacao e quantidade dos bens ou servicos
+        -Valor da prestacao de servicos u da transmissao de bens
+        -Taxas aplicaveis
+        -Montante de IVA
+        -Motive que justifique a nao aplicacao de imposto
+        -Data em que os bens foram colocados a disposicao ou os servicos foram 
+            realizados em caso de data nao coincidir com a data de emissao da  
+            fatura.
+make the login form and buttons to navigate the forms of the database
