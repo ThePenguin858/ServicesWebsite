@@ -1,35 +1,35 @@
 from django.shortcuts import render
 
 from .models import Client, Invoice
-from .forms import ClientForm, InvoiceForm
+from .forms import ModelClientForm, ModelInvoiceForm
 # Create your views here.
 
 
 def create_invoice_view(request, *args, **kwargs):
     """ View for creating receipts urls=create """
 
-    my_form = InvoiceForm(request.POST or None)
+    my_form = ModelInvoiceForm(request.POST or None)
 
     if my_form.is_valid():
         my_form.save()
+        my_form = ModelInvoiceForm()
+    else:
+        print(my_form.errors)
 
-    context = {
-        'form': my_form
-    }
-    return render(request, 'database/fatura_create.html', context)
+    context = {'form': my_form}
+
+    return render(request, 'database/invoice_create.html', context)
 
 
 def create_client_view(request, *args, **kwargs):
     """ View for creating client urls=create """
 
-    new_form = ClientForm(request.GET)
+    new_form = ModelClientForm(request.POST or None)
 
-    if request.method == "POST":
-        new_form = ClientForm(request.POST)
-        if new_form.is_valid():
-            Client.objects.create(**new_form.cleaned_data)
+    if new_form.is_valid():
+        new_form.save()
+        new_form = ModelClientForm()
 
-    context = {
-        'Form': new_form
-    }
+    context = {'Form': new_form}
+
     return render(request, 'database/client_create.html', context)
