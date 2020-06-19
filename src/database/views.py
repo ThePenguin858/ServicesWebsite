@@ -1,8 +1,39 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Client, Invoice
 from .forms import ModelClientForm, ModelInvoiceForm
 # Create your views here.
+
+
+def dynamic_client_view(request, my_name):
+    obj = get_object_or_404(Client, name=my_name)
+
+    context = {
+        'object': obj
+    }
+    return render(request, 'database/client_view.html', context)
+
+
+def list_invoice_view(request):
+    """ List all of the invoices """
+    queryset = Invoice.objects.all()
+
+    context = {
+        'object_list': queryset
+    }
+
+    return render(request, 'database/list_invoice.html', context)
+
+
+def list_clients_view(request):
+    """ List all of the clients """
+    queryset = Client.objects.all()
+
+    context = {
+        'object_list': queryset
+    }
+
+    return render(request, 'database/list_client.html', context)
 
 
 def create_invoice_view(request, *args, **kwargs):

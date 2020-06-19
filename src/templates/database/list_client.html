@@ -1,0 +1,26 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+<table style="width: 100%">
+    <tr>
+        <th>Nome</th>
+        <th>Nif</th>
+        <th>Morada</th>
+        <th>Codigo Postal</th>
+        <th>Email</th>
+        <th>Contacto</th>
+    </tr>
+    {% for instance in object_list %}
+    <tr>
+        <td>{{ instance.name }}</td>
+        <td>{{ instance.nif }}</td>
+        <td>{{ instance.address }}</td>
+        <td>{{ instance.zip_code }}</td>
+        <td>{{ instance.contact_email }}</td>
+        <td>{{ instance.contact_phone }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

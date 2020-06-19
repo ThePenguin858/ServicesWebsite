@@ -11,6 +11,9 @@ class Client(models.Model):
     contact_email = models.EmailField()
     contact_phone = models.CharField(max_length=13, blank=True)
 
+    def get_absolute_url(self):
+        return f'/client/{self.name}'
+
 
 class Invoice(models.Model):
     fid = models.AutoField(unique=True, primary_key=True)
@@ -22,3 +25,6 @@ class Invoice(models.Model):
     iva = models.DecimalField(decimal_places=2, max_digits=10)
     tax_explanation = models.TextField(blank=True, null=True)
     service_date = models.DateField(blank=True, null=True)
+
+    def get_absolute_url(self):
+        return f'/invoice/{self.fid}'
