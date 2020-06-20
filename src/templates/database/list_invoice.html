@@ -12,6 +12,8 @@
     {% for instance in object_list %}
     <tr>
         <td>Cliente: <a href='{{ instance.client.get_absolute_url }}'>{{ instance.client.name }}</a></td>
+        <!--TODO: um botao ao lado do user 'apagar', fazer essa view e -->
+        <!--implementar a funcionalidade--!>-->
         <td>{{ instance.emission_date }}</td>
         <td>{{ instance.provider_name }}</td>
         <td>{{ instance.provider_nif }}</td>

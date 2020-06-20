@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -12,7 +13,8 @@ class Client(models.Model):
     contact_phone = models.CharField(max_length=13, blank=True)
 
     def get_absolute_url(self):
-        return f'/client/{self.name}'
+        # 'database:client/{self.name}')
+        return reverse('client-detail', kwargs={'my_name': self.name})
 
 
 class Invoice(models.Model):
@@ -27,4 +29,4 @@ class Invoice(models.Model):
     service_date = models.DateField(blank=True, null=True)
 
     def get_absolute_url(self):
-        return f'/invoice/{self.fid}'
+        return f'database:invoice/{self.fid}'

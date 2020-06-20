@@ -1,0 +1,21 @@
+Affected aspects:
+
+Nav Bar:
+    In the inheritable template there is going to be a if statement that is
+    going to render the bar accordingly, in the logged in there is going to be 1
+    more element, a dropdown bar that is going to have the links for:
+        -List Invoices;
+        -List Clients:
+        -Create Users;
+        -Create Invoices;
+    There is also going to exist another dropdown that will have:
+        -User Change password;
+        -User logout;
+
+Login:
+    The user will have to go to website/login to login to the system, then they
+    are going to be redirected to the home page but this time the nav bar will 
+    customised to have the element above.
+
+User Functionalit:
+
