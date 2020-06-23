@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>Detalhes Fatura</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}" />
+    <style>
+body {
+    padding: 25px;
+}
+    </style>
+</head>
+
+<body>
+    {% include "bases/navbar.html" %}
+    <main>
+        {% if user.is_authenticated %}
+        <form method="POST" class="form"> {% csrf_token %}
+        {{ object.as_p }}
+        <input type="submit" class="form__btn" value="Guardar Fatura" />
+        </form>
+
+        {% else %}
+        {% include "registration/goto_login.html" %}
+        {% endif %}
+    </main>
+</body>
+
+</html>

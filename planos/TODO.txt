@@ -1,0 +1,5 @@
+Melhorar a validação dos forms,
+    erros em portugues
+
+Habilidade de editar faturas e clientes.
+

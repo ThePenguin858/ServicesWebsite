@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+    <meta charset="utf-8" />
+    <title>Criar Cliente</title>
+    <link rel="stylesheet" href="{% static 'form.css' %}" />
+    <style>
+        body {
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "bases/navbar.html" %}
+    <main>
+        {% if user.is_authenticated %}
+        <form class="form" action="./" method="POST">{% csrf_token %}
+            <div class="form__title">Criar Cliente</div>
+            <p class="form__desc">
+            Criar uma nova entrada de cliente na base de dados.
+            </p>
+
+            {{ Form.as_p }}
+            <p>
+            <input class="form__btn"type="Submit" value="Guardar" />
+            </p>
+        </form>
+        {% else %}
+        {% include "registration/goto_login.html" %}
+        {% endif %}
+
+    </main>
+</body>
+
+</html>

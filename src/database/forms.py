@@ -2,11 +2,53 @@ from django import forms
 
 from .models import Client, Invoice
 
-# TODO: Transformar ambos estes forms em modelForms
 
+class ClientForm(forms.ModelForm):
+    name = forms.CharField(
+        max_length=120,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form__input',
+            }))
 
-class ModelClientForm(forms.ModelForm):
-    nif = forms.CharField(min_length=9, max_length=9)
+    nif = forms.CharField(
+        max_length=9,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form__input form__input--small',
+            }))
+
+    address = forms.CharField(
+        max_length=500,
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form__input',
+            }))
+
+    contact_email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                'class': 'form__input',
+            }))
+
+    contact_phone = forms.CharField(
+        max_length=9,
+        widget=forms.TextInput(
+            attrs={
+                'input': 'tel',
+                'pattern': '[0-9]{9}',
+                'placeholder': '921846856',
+                'class': 'form__input form__input--small',
+            }))
+
+    zip_code = forms.CharField(
+        max_length=16,
+        widget=forms.TextInput(
+            attrs={
+                'pattern': '[0-9]{4}-[0-9]{3}',
+                'placeholder': '9125-119',
+                'class': 'form__input form__input--small',
+            }))
 
     class Meta:
         model = Client
@@ -14,36 +56,59 @@ class ModelClientForm(forms.ModelForm):
             'name',
             'nif',
             'address',
-            'zip_code',
             'contact_email',
-            'contact_phone'
+            'contact_phone',
+            'zip_code',
         ]
         labels = {
             'name': 'Nome',
-            'nif': 'NIF',
+            'nif': 'Nif',
             'address': 'Morada',
-            'zip_code': 'Codigo Postal',
-            'contact_email': 'E-mail',
-            'contact_phone': 'Contacto'
-        }
-        widgets = {
-
-            'contact_phone': forms.TextInput(
-                attrs={
-                    'input': 'tel',
-                    'pattern': '[0-9]{9}',
-                    'placeholder': '921846856'
-                }),
-
-            'zip_code': forms.TextInput(
-                attrs={
-                    'pattern': '[0-9]{4}-[0-9]{3}',
-                    'placeholder': '9125-119',
-                })
+            'zip_code': 'Código postal',
+            'contact_email': 'Email',
+            'contact_phone': 'Contacto',
         }
 
 
-class ModelInvoiceForm(forms.ModelForm):
+class InvoiceForm(forms.ModelForm):
+    emission_date = forms.DateField(widget=forms.DateInput(
+        attrs={
+            'class': 'form__input form__input--small',
+            'type': 'date',
+        }))
+
+    provider_name = forms.CharField(max_length=120,
+                                    widget=forms.TextInput(
+                                        attrs={
+                                            'class': 'form__input form__input--small',
+                                        }))
+
+    provider_nif = forms.CharField(max_length=9,
+                                   widget=forms.TextInput(
+                                       attrs={
+                                           'class': 'form__input form__input--small',
+                                       }))
+    service_value = forms.DecimalField(min_value=0,
+                                       decimal_places=2,
+                                       widget=forms.NumberInput(
+                                           attrs={
+                                               'class': 'form__input form__input--small',
+                                           }))
+
+    iva = forms.DecimalField(required=False, decimal_places=2, max_digits=10, min_value=0,
+                             widget=forms.NumberInput(
+                                 attrs={
+                                     'class': 'form__input form__input--small',
+                                 }))
+
+    tax_explanation = forms.Textarea(attrs={
+        'class': 'form__input form__input--textarea', })
+
+    service_date = forms.DateField(required=False, widget=forms.DateInput(
+        attrs={
+            'type': 'date',
+            'class': 'form__input form__input--small', }))
+
     class Meta:
         model = Invoice
         fields = [
@@ -57,45 +122,26 @@ class ModelInvoiceForm(forms.ModelForm):
             'service_date'
         ]
         labels = {
-            'client': 'Cliente:',
-            'emission_date': 'Data de emissao:',
-            'provider_name': 'Nome do fornecedor:',
-            'provider_nif': 'NIF do fornecedor:',
-            'service_value': 'Valor do servico:',
-            'iva': 'Valor do IVA:',
-            'tax_explanation': 'Motivo de isencao de IVA:',
-            'service_date': 'Data de servico:'
-        }
-        widgets = {
-            'emission_date': forms.DateInput(attrs={'type': 'date'}),
-            'service_date': forms.DateInput(attrs={'type': 'date'}),
-            'tax_explanation': forms.Textarea(
-                attrs={
-                    'rows': 20,
-                    'cols': 40,
-                    'wrap': 'True',
-                    'style': 'resize=none;'
-                })
+            'name': 'Nome:',
         }
 
 
 # class InvoiceForm(forms.Form):
-    # client = forms.ModelChoiceField(queryset=Client.objects.values('name'))
 
-    # emission_date = forms.DateField(widget=forms.DateInput(
-        # attrs={
-        # "type": "date"
-        # }
-    # ))
-    # client_name = forms.CharField(max_length=120)
-    # client_nif = forms.DecimalField(max_digits=9, decimal_places=0)
-    # provider_name = forms.CharField(max_length=120)
-    # provider_nif = forms.DecimalField(max_digits=9, decimal_places=0)
-    # service_value = forms.IntegerField()
-    # iva = forms.DecimalField(decimal_places=2, max_digits=5)
-    # tax_explanation = forms.CharField(required=False, widget=forms.Textarea())
-    # service_date = forms.DateField(required=False, widget=forms.DateInput(
-        # attrs={
-        # "type": "date"
-        # }
-    # ))
+# emission_date = forms.DateField(widget=forms.DateInput(
+# attrs={
+# "type": "date"
+# }
+# ))
+# client_name = forms.CharField(max_length=120)
+# client_nif = forms.DecimalField(max_digits=9, decimal_places=0)
+# provider_name = forms.CharField(max_length=120)
+# provider_nif = forms.DecimalField(max_digits=9, decimal_places=0)
+# service_value = forms.IntegerField()
+# iva = forms.DecimalField(decimal_places=2, max_digits=5)
+# tax_explanation = forms.CharField(required=False, widget=forms.Textarea())
+# service_date = forms.DateField(required=False, widget=forms.DateInput(
+# attrs={
+# "type": "date"
+# }
+# ))

@@ -25,9 +25,8 @@ urlpatterns = [
     path('database/', include('database.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     # Front end
-    path('home/', home_view),
+    path('home/', home_view, name='home'),
     path('', home_view),
     path('about/', about_view),
     path('contacts/', contacts_view),
-
 ]
