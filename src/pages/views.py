@@ -7,14 +7,9 @@ from django.shortcuts import render
 
 def home_view(request, *args, **kwargs):
     """View for url home"""
-    return render(request, 'home.html')
+    return render(request, 'pages/index.html')
 
 
 def about_view(request, *args, **kwargs):
     """View for url about"""
-    return render(request, 'about.html', {})
-
-
-def contacts_view(request, *args, **kwargs):
-    """View for url contacts"""
-    return render(request, 'contacts.html', {})
+    return render(request, 'pages/about.html', {})

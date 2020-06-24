@@ -4,11 +4,6 @@
     <meta charset="utf-8" />
     <title>Criar Fatura</title>
     <link rel="stylesheet" href="{% static 'lists/lists.css' %}" />
-    <style>
-        body {
-            padding: 25px;
-        }
-    </style>
 </head>
 
 <body>
@@ -38,7 +33,7 @@
                 </td>
                 <td><a href="{{ instance.get_absolute_url }}">{{ instance.emission_date }}</a></td>
                 <td><a href="{{ instance.get_absolute_url }}">{{ instance.service_value }}</a></td>
-                <td><a class="btn__delete" href="{% url 'database:delete-invoice' instance.fid %}">Apagar</a></td>
+                <td><a style="color: #f04;" href="{% url 'database:delete-invoice' instance.fid %}">Apagar</a></td>
             </tr>
             {% endfor %}
             </tbody>

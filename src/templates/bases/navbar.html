@@ -1,7 +1,35 @@
-<nav>
-    <ul>
-        <li>Home</li>
-        <li>about</li>
-        <li>Contacts</li>
-    </ul>
-</nav>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'pages/navbar.css' %}" />
+</head>
+<header>
+    <a href="{% url 'home-view' %}">
+        <img class="logo" src="" alt="logo">
+    </a>
+    <nav class="nav_links">
+        <ul>
+            <li><a href="{% url 'about-view' %}">Serviços</a></li>
+            <li><a href="#">Contactos</a></li>
+            {% if user.is_authenticated %}
+            <li class="dropdown">
+                <a class="dropbtn" href="#">Dropdown</a>
+                <div class="dropdown-content">
+                    <a>Algo</a>
+                    <a>Algo</a>
+                    <a>Algo</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="dropbtn" href="#">BaseDeDados</a>
+                <div class="dropdown-content">
+                    <a href="#">Algo</a>
+                    <a href="#">Algo</a>
+                    <a href="#">Algo</a>
+                </div>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <a class="cta" href="#"><button>Contact</button></a>
+</header>
