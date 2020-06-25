@@ -1,2 +1,3 @@
+Usar bootstrap para fazer com o site fique bonito em mobile
 
-
+Conteudo de Home, Serviços e Contacto

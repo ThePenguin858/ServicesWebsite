@@ -12,6 +12,7 @@ li, a, button {
     text-decoration: none;
 }
 header > * {
+    margin: 0;
     background-color: #24252a;
 }
 
@@ -34,7 +35,7 @@ header {
 
 .nav_links li {
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .nav_links li a{
@@ -61,15 +62,14 @@ header {
 
 /* The dropdown container */
 .dropdown {
-  float: right;
+    float: inline-start;
 }
-
 /* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
   border: none;
   outline: none;
-  background-color: inherit;
+  background-color: white;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
