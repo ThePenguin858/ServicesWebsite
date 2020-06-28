@@ -7,7 +7,6 @@
 
 li, a, button {
     font-weight:500; 
-    font-size: 16px;
     color: #edf0f1;
     text-decoration: none;
 }
@@ -26,6 +25,9 @@ header {
 
 .logo {
     cursor: pointer;
+    width: 6em;
+    border-radius: 75px;
+
 }
 
 .nav_links {
@@ -66,50 +68,62 @@ header {
 }
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+    border: none;
+    outline: none;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
 }
 
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  float: none;
-  color: #f9f9f9;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  background-color: #24252a;
+    float: none;
+    color: #f9f9f9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #24252a;
 }
+
+.nav_links a,
+.cta button {
+    font-size: 1.1em;
+}
+
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 @media(max-width: 600px) {
     .cta > *{
-      float: left;
-      color: #f9f9f9;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-      background-color: #24252a;
+        float: left;
+        color: #f9f9f9;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        background-color: #24252a;
     }
-    nav {
-        font-size: 12px;
+    .logo {
+        cursor: pointer;
+        width: 4em;
+        border-radius: 75px;
+
+    }
+    .nav_links a,
+    .cta button {
+        font-size: 0.9em;
     }
 }

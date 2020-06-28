@@ -7,11 +7,10 @@ footer {
 
 .footer {
     bottom: 0;
-    position: absolute;
     width: 100%;
     display: block;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 30px 0;
     box-sizing: border-box;
     background-color: #24252a;
 }
@@ -20,19 +19,19 @@ footer {
     margin: 0 auto;
     width: 1100px;
     height: 100%;
-
 }
 
 .inner_footer .logo_container {
     width: 35%;
     float: left;
-    height: 100%;
+    height: auto;
+    padding: 2% 0 ;
     display: block
 }
 
 .inner_footer .logo_container img{
-    width: 105px;
-    height: auto;
+    width: 6em;
+    border-radius: 75px;
 }
 
 .inner_footer .footer_third {
@@ -63,6 +62,9 @@ footer {
     width: 100%;
     padding-bottom: 5px;
 
+}
+.inner_footer .footer_third a:hover {
+    color: #cf6;
 }
 
 .inner_footer .footer_third li{

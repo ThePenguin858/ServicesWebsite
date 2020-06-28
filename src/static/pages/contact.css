@@ -34,7 +34,7 @@ body {
 .content__container {
     width: 100%;
     height: auto;
-    display: inline-flex;
+    display: block;
     padding: 3% 15%;
 }
 
@@ -42,6 +42,21 @@ body {
     width: 70%;
     margin: 0 auto;
     text-align: left;
+    display: block;
+}
+.content__container .div1 form input {
+    display: block;
+}
+
+.content__title {
+    padding: 2em 0;
+    margin: 0 auto;
+
+    text-align: center;
+
+    font-size: 2em;
+    font-family: "Playfair Display", sans-serif;
+
 }
 
 .divider
@@ -64,14 +79,4 @@ body {
 	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
 }
 
-.content__title {
-    padding: 2em 0;
-    margin: 0 auto;
-
-    text-align: center;
-
-    font-size: 2em;
-    font-family: "Playfair Display", sans-serif;
-
-}
 

@@ -37,8 +37,8 @@
         <div class="content__container">
             <div class="div1">
                 <form class="form" method="POST" action="./" > {% csrf_token %}
-                    <input class="form__input form__input--small" type="text" placeholder="O seu nome" name="message_name"><br>
-                    <input type="email" class="form__input " type="text" placeholder="O seu e-mail" name="message_email">
+                    <input class="form__input form__input--small" type="text" placeholder="O seu nome" name="message_name">
+                    <input type="email" class="form__input " placeholder="O seu e-mail" name="message_email">
                     <textarea class="form__input .form__textarea" style="clear:both;" name="message_body" placeholder="Messagem"></textarea>
                     <input style="float:right;" class="form__btn" type="submit" value="Mandar e-mail">
                 </form>
