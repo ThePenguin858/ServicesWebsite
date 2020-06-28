@@ -69,7 +69,6 @@ header {
   font-size: 16px;
   border: none;
   outline: none;
-  background-color: white;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
@@ -98,4 +97,19 @@ header {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+@media(max-width: 600px) {
+    .cta > *{
+      float: left;
+      color: #f9f9f9;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      background-color: #24252a;
+    }
+    nav {
+        font-size: 12px;
+    }
 }

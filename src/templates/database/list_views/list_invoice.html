@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <title>Criar Fatura</title>
     <link rel="stylesheet" href="{% static 'lists/lists.css' %}" />
@@ -10,7 +11,7 @@
     {% include "bases/navbar.html" %}
     <main>
         {% if user.is_authenticated %}
-        <p class="content__important--warn">INFO: Clique no nome do cliente para editar os detalhes desse cliente.<br>
+        <p class="content__warn">INFO: Clique no nome do cliente para editar os detalhes desse cliente.<br>
         INFO: Clique num dos elementos da fatura para apresentar detalhes sobre essa fatura.</p>
         <table class="content__table">
             <thead>
@@ -43,6 +44,7 @@
         {% endif %}
 
     </main>
+    {% include "bases/footer.html" %}
 </body>
 
 </html>

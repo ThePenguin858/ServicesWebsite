@@ -11,7 +11,7 @@ app_name = 'database'
 urlpatterns = [
 
     # Back end and Database urls
-    path('client/<str:my_name>/',
+    path('client/<int:cid>/',
          client_update_view, name='client-detail'),
     path('invoice/<int:fid>/',
          invoice_update_view, name='invoice-detail'),

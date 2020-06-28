@@ -5,7 +5,8 @@ from django.urls import reverse
 
 
 class Client(models.Model):
-    name = models.CharField(primary_key=True, unique=True, max_length=120)
+    cid = models.AutoField(unique=True, primary_key=True)
+    name = models.CharField(unique=True, max_length=120)
     nif = models.CharField(max_length=9, unique=True)
     address = models.CharField(max_length=500, blank=True)
     zip_code = models.CharField(max_length=16)
@@ -14,7 +15,7 @@ class Client(models.Model):
 
     def get_absolute_url(self):
         # 'database:client/{self.name}')
-        return reverse('database:client-detail', kwargs={'my_name': self.name})
+        return reverse('database:client-detail', kwargs={'cid': self.cid})
 
 
 class Invoice(models.Model):

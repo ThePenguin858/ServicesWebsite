@@ -4,13 +4,12 @@
     <link rel="stylesheet" href="{% static 'pages/navbar.css' %}" />
 </head>
 <header>
-    <a href="{% url 'home-view' %}">
+    <a href="{% url 'pages:home-view' %}">
         <img class="logo" src="" alt="logo">
     </a>
     <nav class="nav_links">
         <ul>
-            <li><a href="{% url 'about-view' %}">Serviços</a></li>
-            <li><a href="#">Contactos</a></li>
+            <li><a href="{% url 'pages:about-view' %}">Serviços</a></li>
             {% if user.is_authenticated %}
             <li class="dropdown">
                 <a class="dropbtn" href="#">User</a>
@@ -30,5 +29,5 @@
             {% endif %}
        </ul>
     </nav>
-    <a class="cta" href="#"><button>Contact</button></a>
+    <a class="cta" href="{% url 'pages:contact-view' %}"><button>Contacte-nos</button></a>
 </header>

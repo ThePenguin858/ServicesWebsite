@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .form {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
+    height: 61%;
     background-color: white;
 }
 
@@ -10,6 +16,7 @@
     box-sizing: border-box;
     line-height: 1.5;
     background-color: white;
+    position: relative;
 }
 
 .form__title {
@@ -105,6 +112,7 @@ textarea {
     resize: none;
     min-height: 200px;
 }
+
 
 .form__btn {
     font-family: 'Noto Sans JP', sans-serif;
