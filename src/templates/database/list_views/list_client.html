@@ -36,7 +36,7 @@
                                 Este cliente não contêm contacto.
                                 {% endif %}
                             </a></td>
-                            <td><a style="color: #f90000;" href="{% url 'database:delete-client' instance.cid %}">Apagar</a></td>
+                            <td><a style="color: #f90000;" href="{% url 'database:delete-client' instance.name %}">Apagar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

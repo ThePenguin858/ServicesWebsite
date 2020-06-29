@@ -58,8 +58,8 @@ def create_client_view(request, *args, **kwargs):
     return render(request, 'database/forms/client_create.html', context)
 
 
-def client_update_view(request, cid):
-    obj = Client.objects.get(cid=cid)
+def client_update_view(request, my_name):
+    obj = Client.objects.get(name=my_name)
     form = ClientForm(instance=obj)
     if request.method == 'POST':
         form = ClientForm(request.POST, instance=obj)

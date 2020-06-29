@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
 * {
     box-sizing: border-box;
     font-family: 'Noto Sans JP', sans-serif;
@@ -15,13 +19,51 @@ body {
 
 img {
     vertical-align: middle;
+    box-shadow: 0 0 20px rgba(0,0,0, 0.35);
+    border-radius: 10px;
+}
+
+.content__title {
+    padding: 1.5em 0;
+    margin: 0 auto;
+
+    text-align: center;
+    text-justify: none;
+
+    font-size: 2em;
+    font-family: "Playfair Display", sans-serif;
+}
+
+.main__content {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0 25%;
+}
+
+.main__content div{
+    padding: 10% 10%;
+
+}
+.content__list {
+    color: black;
+    background-color: #cf6;
+    border-radius: 10px;
+    list-style: none;
+    padding: 1em ;
+}
+
+.content__list li{
+    font-weight: 500;
+    padding: 0.2em 0;
 }
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+
+    max-width: 60%;
     position: relative;
-    margin: auto;
+    margin: 1em auto;
 }
 
 /* Next & previous buttons */
@@ -97,6 +139,10 @@ img {
     animation-duration: 1.5s;
 }
 
+.fade img {
+    width: 100%;
+}
+
 @-webkit-keyframes fade {
     from {
         opacity: .4
@@ -117,6 +163,26 @@ img {
     }
 }
 
+.divider
+{
+	position: relative;
+	margin-top: 10px;
+	height: 1px;
+        padding-bottom: 10px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
 
@@ -126,3 +192,4 @@ img {
         font-size: 11px
     }
 }
+

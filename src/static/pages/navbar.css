@@ -5,7 +5,7 @@
     margin: 0;
 }
 
-li, a, button {
+header > li, a, button {
     font-weight:500; 
     color: #edf0f1;
     text-decoration: none;
