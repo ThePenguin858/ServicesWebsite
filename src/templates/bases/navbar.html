@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="{% static 'pages/navbar.css' %}" />
+    <Title>Valter Pereira</Title>
 </head>
 <header>
     <a href="{% url 'pages:home-view' %}">
@@ -23,7 +24,7 @@
                 <a class="dropbtn" href="#">BaseDeDados</a>
                 <div class="dropdown-content">
                     <a href="{% url 'database:create-client' %}">Criar Cliente</a>
-                    <a href="{% url 'database:list-clients' %}">Listar Clients</a>
+                    <a href="{% url 'database:list-clients' %}">Listar Clientes</a>
                     <a href="{% url 'database:create-invoice' %}">Criar Fatura</a>
                     <a href="{% url 'database:list-invoices' %}">Listar Faturas</a>
                 </div>
