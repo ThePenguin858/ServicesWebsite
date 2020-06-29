@@ -80,3 +80,9 @@ body {
 }
 
 
+@media(max-width: 600px) {
+    .content__container {
+        padding:0;
+        margin: 2%;
+    }
+}

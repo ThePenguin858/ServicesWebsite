@@ -34,6 +34,6 @@ def contact_view(request, *args, **kwargs):
             message_body,
             message_email,
             ['franciscoppontes369@gmail.com', 'francisco.perestrelo.pontes@gmail.com'])
-        return render(request, 'pages/contactus.html', {message_name: 'message_name', })
+        return render(request, 'pages/contactus.html', {'message_name': message_name, })
     else:
         return render(request, 'pages/contactus.html', {})

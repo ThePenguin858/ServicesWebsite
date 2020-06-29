@@ -72,4 +72,8 @@ body main {
 	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
 }
 
-
+@media(max-width: 600px) {
+    .content1 {
+        margin: 1em 0;
+    }
+    

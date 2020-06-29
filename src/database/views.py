@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Client, Invoice
-from .forms import ClientForm, InvoiceForm
+from .forms import EditClientForm, ClientForm, InvoiceForm
 from pages.views import home_view
 # Create your views here.
 
@@ -60,9 +60,9 @@ def create_client_view(request, *args, **kwargs):
 
 def client_update_view(request, my_name):
     obj = Client.objects.get(name=my_name)
-    form = ClientForm(instance=obj)
+    form = EditClientForm(instance=obj)
     if request.method == 'POST':
-        form = ClientForm(request.POST, instance=obj)
+        form = EditClientForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
             return redirect('/database/list_clients')

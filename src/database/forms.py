@@ -3,6 +3,65 @@ from django import forms
 from .models import Client, Invoice
 
 
+class EditClientForm(forms.ModelForm):
+    nif = forms.CharField(
+        max_length=9,
+        label='Nif',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': '734231503',
+                'class': 'form__input form__input--small',
+            }))
+
+    address = forms.CharField(
+        max_length=500,
+        label='Morada',
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Rua da carreira, edifício bela vista',
+                'class': 'form__input',
+            }))
+
+    contact_email = forms.EmailField(
+        label='Email',
+        widget=forms.EmailInput(
+            attrs={
+                'placeholder': 'ruiptbarros@gmail.com',
+                'class': 'form__input',
+            }))
+
+    contact_phone = forms.CharField(
+        max_length=9,
+        label='Contacto',
+        widget=forms.TextInput(
+            attrs={
+                'input': 'tel',
+                'pattern': '[0-9]{9}',
+                'placeholder': '921846856',
+                'class': 'form__input form__input--small',
+            }))
+
+    zip_code = forms.CharField(
+        max_length=16,
+        label='Código Postal',
+        widget=forms.TextInput(
+            attrs={
+                'pattern': '[0-9]{4}-[0-9]{3}',
+                'placeholder': '9125-119',
+                'class': 'form__input form__input--small',
+            }))
+
+    class Meta:
+        model = Client
+        fields = [
+            'nif',
+            'address',
+            'contact_email',
+            'contact_phone',
+            'zip_code',
+        ]
+
+
 class ClientForm(forms.ModelForm):
     name = forms.CharField(
         max_length=120,
